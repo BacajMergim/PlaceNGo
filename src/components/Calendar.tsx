@@ -24,7 +24,7 @@ export function Calendar({ selectedDate, setSelectedDate }: calculatorProps) {
   };
 
   return (
-    <div className="scale-75 xl:scale-100">
+    <div className="scale-[0.70] xl:scale-[0.90] mt-0 pt-0">
       <DayPicker
         classNames={{
           today: `border-amber-500`,

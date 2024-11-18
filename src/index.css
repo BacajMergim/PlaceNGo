@@ -7,6 +7,7 @@
   margin: 0;
   box-sizing: border-box;
 }
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Poppins", "Segoe UI",
@@ -15,6 +16,21 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+  transition: background-color 600000s 0s, color 600000s 0s;
+}
+
+input[data-autocompleted] {
+  background-color: transparent !important;
+}
+
 .menu li,
 li.active {
   position: relative;
@@ -61,4 +77,124 @@ li.active :before {
     #121d23 10px,
     #f4f7f9 11px
   );
+}
+
+.border-repair {
+  border-radius: 50px;
+}
+select:focus > option:hover {
+  background: #000 !important;
+}
+
+select::-ms-expand {
+  display: none;
+}
+select {
+  display: inline-block;
+  box-sizing: border-box;
+  font: inherit;
+  line-height: inherit;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(45deg, transparent 50%, currentColor 50%),
+    linear-gradient(135deg, currentColor 50%, transparent 50%);
+  background-position: right 15px top 1em, right 10px top 1em;
+  background-size: 5px 5px, 5px 5px;
+}
+
+select::selection {
+  background-color: red;
+  color: white;
+}
+
+.picker {
+  width: 300px;
+  background: cornflowerblue;
+  padding-bottom: 50px;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Handle */
+:hover::-webkit-scrollbar-thumb {
+  background: #30efa6;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #333;
+}
+
+pre,
+textarea {
+  font-family: "Trebuchet MS", sans-serif, Arial;
+  font-size: 0.875rem !important;
+}
+
+.rounded-editor .ql-toolbar {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.rounded-editor .ql-container {
+  font-size: 18px;
+  font-family: "Poppins";
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  background-color: white;
+}
+
+.ql-editor ul,
+.ql-editor ol {
+  padding-left: 0 !important;
+}
+
+.ql-toolbar {
+  background-color: black !important;
+  color: white !important;
+}
+
+.ql-toolbar .ql-stroke {
+  fill: none;
+  stroke: #30efa6 !important;
+}
+
+.ql-active .ql-stroke {
+  fill: none;
+  stroke: #90b7e4 !important;
+}
+
+.ql-toolbar .ql-picker-label {
+  color: #30efa6 !important;
+}
+
+.container p {
+  margin: 0;
+}
+
+.link p a {
+  color: blue;
+}
+
+.white-calendar path {
+  fill: white;
+}
+
+.white circle {
+  fill: white !important;
+}
+
+.rdp-button:hover:not([disabled]):not(.rdp-day_selected) {
+  color: black !important;
+}
+
+.rdp-day_selected {
+  background: #30efa6 !important;
+  color: black !important;
 }
