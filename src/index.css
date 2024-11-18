@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Poppins", "Segoe UI",
+    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.menu li,
+li.active {
+  position: relative;
+  padding: 5px;
+  border-radius: 50px 0 0 50px;
+}
+
+.menu li:hover,
+li.active {
+  background: #f4f7f9;
+}
+
+.menu-item:hover path,
+.menu-item.active path {
+  fill: black;
+}
+
+li.active a .menu-item path {
+  fill: black;
+}
+
+.menu li:hover:after,
+.menu li:hover:before,
+li.active :after,
+li.active :before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  right: 0px;
+}
+
+.menu li:hover:after,
+li.active :after {
+  top: -10px;
+  background: radial-gradient(circle at top left, #121d23 10px, #f4f7f9 11px);
+}
+
+.menu li:hover:before,
+li.active :before {
+  bottom: -10px;
+  background: radial-gradient(
+    circle at bottom left,
+    #121d23 10px,
+    #f4f7f9 11px
+  );
+}
