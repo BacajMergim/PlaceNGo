@@ -7,7 +7,7 @@ const App = () => {
     <BrowserRouter>
       <div className="flex w-full flex-row justify-between items-start h-full overflow-hidden bg-[#F4F7F9] relative">
         <Sidebar />
-        <div className="w-full p-8 pb-0 pr-14 h-fit flex justify-center items-center overflow-visible">
+        <div className="w-full p-8 pb-0 pr-14 h-fit flex justify-center items-center overflow-scroll">
           <Route />
         </div>
       </div>
