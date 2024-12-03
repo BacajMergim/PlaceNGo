@@ -68,7 +68,7 @@ const BookingPage = () => {
 
   return (
     <>
-      <div className="flex flex-col h-screen w-full items-center sm:ml-7">
+      <div className="flex flex-col h-screen w-full items-center sm:ml-7 overflow-y-scroll">
         <h2 className="font-bold text-5xl my-5">Make a Reservation</h2>
         <form
           onSubmit={handleSubmit}
