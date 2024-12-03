@@ -7,6 +7,13 @@
   margin: 0;
   box-sizing: border-box;
 }
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  height: 100%;
+}
 
 body {
   margin: 0;
@@ -113,22 +120,6 @@ select::selection {
   width: 300px;
   background: cornflowerblue;
   padding-bottom: 50px;
-}
-
-/* width */
-::-webkit-scrollbar {
-  width: 5px;
-}
-
-/* Handle */
-:hover::-webkit-scrollbar-thumb {
-  background: #30efa6;
-  border-radius: 10px;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #333;
 }
 
 pre,
