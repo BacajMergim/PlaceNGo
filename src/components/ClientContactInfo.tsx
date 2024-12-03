@@ -7,12 +7,12 @@ function ClientContactInfo({ data, dataChange }: Props) {
   return (
     <div className="flex flex-col justify-between h-full">
       <label>
-        Please select the hour:{" "}
+        <p>Please select the hour: </p>
         <input
-          className="bg-transparent border border-black px-1 rounded-md"
+          className="bg-transparent border border-black px-1 rounded-md hover:cursor-text"
           type="time"
           name="time"
-          value={data.time}
+          value={data.time || "00:00"}
           onChange={dataChange}
         />
       </label>

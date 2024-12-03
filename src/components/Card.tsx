@@ -6,8 +6,14 @@ type CardProps = {
 };
 
 function Card({ children, style }: CardProps) {
+  const handleCardClick = (e: React.MouseEvent) => {
+    e.stopPropagation();
+  };
   return (
-    <div className={`h-96 w-72  bg-black mb-4 p-4 rounded-md ${style}`}>
+    <div
+      onClick={handleCardClick}
+      className={`h-96 w-72  bg-black mb-4 p-4 rounded-md ${style}`}
+    >
       {children}
     </div>
   );
