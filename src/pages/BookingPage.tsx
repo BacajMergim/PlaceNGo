@@ -68,17 +68,19 @@ const BookingPage = () => {
 
   return (
     <>
-      <div className="flex flex-col h-screen w-full items-center sm:ml-7 overflow-y-scroll">
-        <h2 className="font-bold text-5xl my-5">Make a Reservation</h2>
+      <div className="flex flex-col h-screen w-screen items-center pb-20  overflow-y-scroll overflow-x-hidden">
+        <h2 className="font-bold text-4xl text-center my-5">
+          Reservierung vornehmen
+        </h2>
         <form
           onSubmit={handleSubmit}
           className="flex flex-col items-center w-full"
         >
-          <div className="flex justify-center gap-4 w-full items-center md:flex-col sm:flex ">
-            <div className="xl:flex xl:gap-4 xl:w-full xl:justify-around">
+          <div className="flex justify-center  gap-4 w-full items-center md:flex-col sm:flex ">
+            <div className="xl:flex xl:gap-3 xl:w-full xl:justify-end">
               <Card style="text-white !bg-opacity-75 mt-40 sm:mt-20 flex justify-center flex-wrap  xl:!w-[330px] xl:!h-[500px]">
                 <h3 className="font-bold text-2xl my-5 w-full text-center">
-                  Number of guests
+                  Anzahl der Gäste.
                 </h3>
                 <>
                   {maxNumPeople.map((num) => {
@@ -90,7 +92,6 @@ const BookingPage = () => {
                             ? "bg-primary text-black"
                             : ""
                         }`}
-                        // Prevent default behavior of button click
                         onClick={(e) => {
                           e.preventDefault();
                           setFormData({
@@ -98,7 +99,7 @@ const BookingPage = () => {
                             numPeople: num,
                           });
                         }}
-                        type="button" // Set type to button to prevent form submission
+                        type="button"
                       >
                         {num}
                       </Button>
@@ -113,22 +114,30 @@ const BookingPage = () => {
                 />
               </Card>
             </div>
-            <div className="xl:flex xl:gap-4 xl:w-full xl:justify-around">
+            <div className="xl:flex xl:gap-4 xl:w-full xl:justify-start">
               <Card style="!bg-opacity-25 xl:mt-40 flex justify-center flex-wrap  xl:!w-[330px] xl:!h-[500px]">
                 <ClientContactInfo data={formData} dataChange={handleChange} />
               </Card>
               <Card style="!bg-opacity-10 flex justify-center flex-wrap  xl:!w-[330px] xl:!h-[500px]">
                 <div className="flex flex-col justify-between h-full">
-                  <h3>Summary</h3>
-                  <p>
-                    Date:{" "}
+                  <h3 className="text-center font-semibold">Summary</h3>
+                  <p className="text-center font-medium">
+                    Reservierungsdatum ist::{" "}
                     {selected ? moment(selected).format("DD.MM.YYYY") : "N/A"}
                   </p>
-                  <p>{formData.numPeople} Guests</p>
-                  <p>At {formData.time}</p>
-                  <p>
-                    If you reserve now, you will get a confirmation by Email:{" "}
-                    {formData.email}
+                  {formData.numPeople > 1 && (
+                    <p className="text-center font-medium">
+                      {formData.numPeople} Gäste
+                    </p>
+                  )}
+                  {formData.time && (
+                    <p className="text-center font-medium">
+                      Am {formData.time}
+                    </p>
+                  )}
+                  <p className="text-center font-medium">
+                    Sie können jederzeit stornieren, bitte geben Sie uns nur
+                    Bescheid.
                   </p>
                 </div>
               </Card>
@@ -145,7 +154,7 @@ const BookingPage = () => {
             }
             type="submit"
           >
-            Reserve
+            Reservieren
           </Button>
         </form>
       </div>

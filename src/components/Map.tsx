@@ -7,8 +7,9 @@ const Map = () => {
   const openGoogleMaps = () => {
     const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
     const googleMapsUrl = isMobile
-      ? `geo:${center[0]},${center[1]}`
+      ? `https://maps.google.com/?q=${center[0]},${center[1]}`
       : `https://www.google.com/maps?q=${center[0]},${center[1]}`;
+
     window.open(googleMapsUrl, "_blank");
   };
   return (

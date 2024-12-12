@@ -43,8 +43,8 @@ export function Calendar({ selectedDate, setSelectedDate }: calculatorProps) {
         disabled={{ before: new Date() }}
         footer={
           selectedDate
-            ? `Selected: ${selectedDate.toLocaleDateString()}`
-            : "Pick a day for your reservation."
+            ? `Sie haben den : ${selectedDate.toLocaleDateString()} ausgewählt`
+            : "Wählen Sie einen Tag für Ihre Reservierung."
         }
       />
     </div>
