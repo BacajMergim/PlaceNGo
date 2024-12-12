@@ -1,6 +1,5 @@
 import cs from "classnames";
 import { ButtonHTMLAttributes, DetailedHTMLProps } from "react";
-// import { Spinner } from "../Spinner/Spinner";
 
 export interface ButtonProps
   extends DetailedHTMLProps<
@@ -20,8 +19,6 @@ const Button = (props: ButtonProps) => {
       )}
       {...rest}
     >
-      {/* {loading ? <Spinner /> : children} */}
-
       {children}
     </button>
   );

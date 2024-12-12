@@ -4,7 +4,7 @@ import { Calendar } from "../components/Calendar";
 import moment from "moment";
 import Card from "../components/Card";
 import ClientContactInfo from "../components/ClientContactInfo";
-// import useSaveReservation from "../utils/useSaveReservation";
+
 import { v4 as uuidv4 } from "uuid";
 import { useSendConfirmation } from "../utils/useSendConfirmation";
 import Successful from "../components/Successful";
@@ -21,7 +21,6 @@ export interface FormData {
 }
 
 const BookingPage = () => {
-  // const { sendReservationToFirebase } = useSaveReservation();
   const { sendConfirmation } = useSendConfirmation();
   const [selected, setSelected] = useState<Date | undefined>(undefined);
   const [showModal, setShowModal] = useState(false);
@@ -35,7 +34,6 @@ const BookingPage = () => {
     id: uuidv4(),
   });
 
-  // Handle changes to form inputs (name, email, time, etc.)
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData({
@@ -44,11 +42,9 @@ const BookingPage = () => {
     });
   };
 
-  // Handle form submission
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    // Add the selected date to formData before sending
     if (selected) {
       setFormData((prevFormData) => ({
         ...prevFormData,
@@ -56,14 +52,8 @@ const BookingPage = () => {
       }));
     }
 
-    // Send the updated formData to Firebase
-    // sendReservationToFirebase({
-    //   ...formData,
-    //   date: moment(selected).format("DD-MM-YYYY"),
-    // });
     sendConfirmation(formData);
     setShowModal(false);
-    console.log(formData);
   };
 
   return (
